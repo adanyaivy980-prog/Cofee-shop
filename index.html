@@ -3,122 +3,331 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Cofee hub - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vee's Coffee Shop - Ghana Made Coffee</title>
+    
+    <!-- Coffee Shop Theme Styles -->
+    <style>
+        :root {
+            --coffee-dark: #3E2723;
+            --coffee-medium: #5D4037;
+            --coffee-light: #8D6E63;
+            --cream: #FFF8E1;
+            --latte: #D7CCC8;
+            --accent-gold: #FFD54F;
+            --accent-orange: #FF9800;
+        }
+
+        /* Body with coffee background */
+        body {
+            background: 
+                linear-gradient(rgba(62, 39, 35, 0.9), rgba(94, 64, 55, 0.85)),
+                url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80') center/cover fixed no-repeat;
+            color: var(--cream);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        h1, h2, h3 {
+            color: var(--accent-gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #main-heading {
+            text-align: center;
+            font-size: 3.5em;
+            color: var(--accent-gold);
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(62, 39, 35, 0.7);
+            border-radius: 15px;
+            border: 3px solid var(--accent-orange);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        /* Content boxes with coffee theme */
+        .content-box {
+            background: rgba(255, 248, 225, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--accent-orange);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Promise section */
+        .promise-box {
+            background: linear-gradient(145deg, rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.9));
+            border-left: 8px solid var(--accent-gold);
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            max-width: 850px;
+        }
+
+        .promise-box:before {
+            content: "☕";
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-gold);
+            color: var(--coffee-dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* Contact info styling */
+        .contact-info {
+            background: linear-gradient(to right, var(--coffee-medium), var(--coffee-light));
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px dashed var(--accent-gold);
+        }
+
+        .phone-number {
+            font-size: 1.8em;
+            color: var(--accent-gold);
+            font-weight: bold;
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* Footer styling */
+        footer {
+            background: rgba(45, 30, 25, 0.95);
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .copyright {
+            color: var(--latte);
+            font-size: 1.1em;
+            padding: 15px;
+            border-top: 1px solid rgba(255, 213, 79, 0.3);
+            margin-top: 20px;
+        }
+
+        /* Links and buttons */
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .coffee-button {
+            background: linear-gradient(to right, var(--accent-orange), #FF5722);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            margin: 15px;
+        }
+
+        .coffee-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        /* Text styling */
+        .lead-text {
+            font-size: 1.3em;
+            color: #FFD54F;
+            text-align: center;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            #main-heading {
+                font-size: 2.5em;
+                padding: 15px;
+            }
+            
+            .content-box, .promise-box {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            .phone-number {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="coffee-shop-container">
+        
+        <!-- Coffee-themed header -->
         <header>
-            <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
-                <span class="site-heading-lower">Business Casual</span>
+            <h1 id="main-heading">
+                <span style="color: #FFD54F;">☕ Vee's Coffee Shop</span><br>
+                <small style="color: #FFF8E1; font-size: 0.4em; font-family: sans-serif;">Fresh Coffee Locally Made. Worth Tasting</small>
             </h1>
         </header>
-        <!-- Navigation-->
-         <style>/* Navbar background */
-    .navbar {
-      background-color: #3e2723;
-    }
 
-    /* Links: Home, About, Products, Store */
-    .navbar .nav-link {
-      color: #f5deb3;
-      font-weight: bold;
-    }
-
-    /* Hover effect */
-    .navbar .nav-link:hover {
-      background-color: #6f4e37;
-      color: #ffffff;
-      border-radius: 5px;
-    }
-
-    /* Active page */
-    .navbar .nav-link.active {
-      background-color: #c49a6c;
-      color: #3e2723;
-      border-radius: 5px;
-    }
-</style>
-        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Vee's coffe shop</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Products</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Store</a></li>
-                    </ul>
-                </div>
+        <!-- Introduction Section -->
+        <div class="content-box">
+            <h2 style="text-align: center; color: #FFD54F;">Experience Authentic Ghanaian Coffee</h2>
+            
+            <p class="lead-text">
+                Vee's coffee is Ghana made, produced from our local cocoa ingredient. 
+                <span class="highlight">A sip is all you need to prove me right!!</span>
+            </p>
+            
+            <div style="text-align: center;">
+                <button class="coffee-button" onclick="window.location.href='#visit'">Visit Us Today!</button>
             </div>
-        </nav>
-        <section class="page-section clearfix">
-            <div class="container">
-                <div class="intro">
-                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="coffee.webp" alt="..." />
-                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-                        <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Fresh Coffe locally made.</span>
-                            <span class="section-heading-lower">Worth Tasting</span>
-                        </h2>
-                        <p class="mb-3">Vee's coffee is Ghana made one produced from our local cocoa ingredient,it worth tasting a sip is all you need to prove me right!!</p>
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section cta">
-<div class="container">
-    <div class="row">
-        <div class="col-xl-9 mx-auto">
-            <div class="cta-inner bg-faded text-center rounded" style="background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%); padding: 40px; border: 3px solid #FF9800; border-radius: 15px; box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);">
-                <h2 class="section-heading mb-4">
-                    <span class="section-heading-upper" style="color: #5D4037; font-size: 1.2em; letter-spacing: 2px; text-transform: uppercase;">✨ My Promise ✨</span>
-                    <span class="section-heading-lower" style="color: #BF360C; font-size: 2.5em; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.1);">To You</span>
-                </h2>
-                <p class="mb-3" style="color: #444; font-size: 1.1em; line-height: 1.7;">
-                    When you walk into my shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients.
-                </p>
-                <p class="mb-3" style="color: #444; font-size: 1.1em; line-height: 1.7;">
-                    If you are not satisfied, please let us know and we will do whatever we can to make things right!
-                </p>
-                <div class="contact-highlight mt-4" style="background: linear-gradient(to right, #FFE0B2, #FFCC80); padding: 15px 25px; border-radius: 10px; display: inline-block; border: 2px dashed #FF9800;">
-                    <strong style="color: #E65100; font-size: 1.1em;">📞 Contact me for any details:</strong>
-                    <span style="color: #BF360C; font-weight: bold; font-size: 1.3em; margin-left: 10px;">0537205399</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer class="footer text-center py-5" style="background: linear-gradient(135deg, #5D4037 0%, #8D6E63 100%); color: #FFECB3; margin-top: 40px;">
-    <div class="container">
-        <div style="border-bottom: 2px solid rgba(255, 236, 179, 0.3); padding-bottom: 20px; margin-bottom: 20px;">
-            <p class="mb-2" style="font-size: 1.1em; color: #FFD54F;">
-                "Vee's coffee is Ghana made, produced from our local cocoa ingredient. A sip is all you need!"
+            
+            <p style="font-size: 1.1em; text-align: center;">
+                Find quality coffee locally made. We bring you the finest Ghanaian coffee beans, 
+                carefully selected and roasted to perfection. Taste the difference of locally sourced ingredients!
             </p>
         </div>
-        <p class="m-0 small" style="font-size: 1em; color: #FFECB3;">
-            <span style="color: #FFCC80;">©</span> 
-            <span style="color: #FFD54F; font-weight: bold;">Vee's Coffee Shop</span> 
-            <span style="color: #FFCC80;">2025</span> 
-            <span style="color: #FFECB3; margin-left: 10px;">|</span> 
-            <span style="color: #FFD54F; margin-left: 10px;">Proudly Ghana Made</span>
-        </p>
-    </div>
-</footer>
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-    </body>
+        <!-- Promise Section -->
+        <div class="promise-box">
+            <h2 style="color: #FFD54F; text-align: center; font-size: 2.5em;">
+                <span style="color: #FFF8E1; font-family: 'Brush Script MT', cursive;">MY PROMISE</span><br>
+                <span style="font-size: 0.8em; font-family: sans-serif;">To You</span>
+            </h2>
+            
+            <p style="font-size: 1.2em; line-height: 1.8;">
+                When you walk into my shop to start your day, we are dedicated to providing you with 
+                <span class="highlight">friendly service</span>, a 
+                <span class="highlight">welcoming atmosphere</span>, and above all else, 
+                <span class="highlight">excellent products</span> made with the highest quality ingredients.
+            </p>
+            
+            <p style="font-size: 1.2em; line-height: 1.8; margin-top: 20px;">
+                If you are not satisfied, please let us know and we will do whatever we can to make things right!
+            </p>
+            
+            <div class="contact-info" id="visit">
+                <h3 style="color: #FFD54F; font-size: 1.8em;">📞 Contact Us Today!</h3>
+                <span class="phone-number">0537205399</span>
+                <p style="color: #FFF8E1; font-size: 1.1em;">
+                    Visit our shop for Ghana's finest coffee experience
+                </p>
+                <p style="color: #FFD54F; margin-top: 15px;">
+                    <strong>Location:</strong> Accra, Ghana Telecom<br>
+                    <strong>Hours:</strong> Mon-Sat: 6AM - 8PM | Sun: 7AM - 6PM
+                </p>
+            </div>
+        </div>
+
+        <!-- Additional Info Section -->
+        <div class="content-box">
+            <h2 style="text-align: center; color: #FFD54F;">Why Choose Vee's Coffee?</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+                <div style="flex: 1; min-width: 250px; background: rgba(255, 215, 79, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #FFD54F;">
+                    <h3 style="color: #FFD54F;">🌱 Locally Sourced</h3>
+                    <p>Our coffee beans are sourced directly from Ghanaian farms, supporting local agriculture.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 250px; background: rgba(255, 215, 79, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #FFD54F;">
+                    <h3 style="color: #FFD54F;">🔥 Freshly Roasted</h3>
+                    <p>We roast our beans in small batches to ensure maximum freshness and flavor.</p>
+                </div>
+                
+                <div style="flex: 1; min-width: 250px; background: rgba(255, 215, 79, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #FFD54F;">
+                    <h3 style="color: #FFD54F;">👨‍🍳 Expert Baristas</h3>
+                    <p>Our trained baristas prepare each cup with care and expertise.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div style="padding: 20px;">
+                <p style="font-size: 1.2em; color: #FFD54F; font-style: italic;">
+                    "Vee's coffee is Ghana made, produced from our local cocoa ingredient.<br>
+                    A sip is all you need to prove me right!!"
+                </p>
+            </div>
+            <div class="copyright">
+                <p style="margin: 0;">
+                    <span style="color: #FFD54F;">© Vee's Coffee Shop 2025</span> | 
+                    <span style="color: #FFF8E1;">Proudly Ghana Made</span> | 
+                    <span style="color: #FFCC80;">All Rights Reserved</span>
+                </p>
+                <p style="margin: 10px 0 0 0; color: #D7CCC8; font-size: 0.9em;">
+                    Website: https://adanyaivy980-prog.github.io/Coffee-shop/
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript for interactivity -->
+    <script>
+        // Simple JavaScript for button hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.coffee-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(255, 152, 0, 0.4)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Smooth scroll for visit button
+            const visitButton = document.querySelector('.coffee-button');
+            visitButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contactSection = document.getElementById('visit');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
 </html>
